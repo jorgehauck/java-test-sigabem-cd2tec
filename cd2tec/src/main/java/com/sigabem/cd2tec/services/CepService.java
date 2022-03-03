@@ -9,6 +9,4 @@ public interface CepService {
 	
 	@GetMapping(value = "{cep}/json")
 	EnderecoService findByCEP(@PathVariable("cep") String cep);
-	
-	
 }

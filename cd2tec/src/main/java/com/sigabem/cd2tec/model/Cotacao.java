@@ -1,7 +1,7 @@
 package com.sigabem.cd2tec.model;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -36,7 +36,8 @@ public class Cotacao implements Serializable {
 
 	// @DateTimeFormat(pattern = "dd/MM/yyyy")
 	// private Instant dataPrevistaEntrega;
-	String dataConsulta = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTime());
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dataConsulta = LocalDate.now();
 
 	public Cotacao() {
 	}
@@ -92,7 +93,7 @@ public class Cotacao implements Serializable {
 		this.nomeDestinatario = nomeDestinatario;
 	}
 
-	public String getDataConsulta() {
+	public LocalDate getDataConsulta() {
 		return dataConsulta;
 	}
 
